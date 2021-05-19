@@ -27,7 +27,7 @@ def throwbin(chat_id, text):
         real_text = real[1]
     except IndexError:
         real_text = text
-        title = '@acc_checkbot'
+        title = '@B0RNTOLE4RN'
     tb = ThrowBin()
     my_paste = tb.post(
         title=title,
