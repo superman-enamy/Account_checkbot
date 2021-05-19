@@ -39,13 +39,13 @@ def combos_spilt(combos):
 
 def help(update, context):
     chat_id = update.message.chat_id
-    text = "<b>Available Sites:\n/alt~space~combo* - to check Altbalaji accounts\n/hoi~space~combo* - to check Hoichoi accounts\n/voo~space~combo* - to check Voot accounts\n/zee~space~combo* - to check Zee5 accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo here means Email:password combination,':' is important."
+    text = "<b>Available Sites:\n!alt~space~combo* - to check Altbalaji accounts\n!hoi~space~combo* - to check Hoichoi accounts\n!voo~space~combo* - to check Voot accounts\n!zee~space~combo* - to check Zee5 accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo here means Email:password combination,':' is important."
     Sendmessage(chat_id, text, reply_markup= InlineKeyboardMarkup(startmessage))
 
 def duty(update, context):
     chat_id = update.message.chat_id
     text =  update.message.text.split(' ', 1)
-    if text[0] == '/alt':
+    if text[0] == '!alt':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -53,7 +53,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Completed')
         else:
             altbalaji_helper(chat_id, text[1])
-    elif text[0] == '/voo':
+    elif text[0] == '!voo':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -61,7 +61,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Completed')
         else:
             Voot_helper(chat_id, text[1])
-    elif text[0] == '/hoi':
+    elif text[0] == '!hoi':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -69,7 +69,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Completed')
         else:
             hoichoi_helper(chat_id, text[1])
-    elif text[0] == '/zee':
+    elif text[0] == '!zee':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
