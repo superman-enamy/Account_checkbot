@@ -17,7 +17,7 @@ startmessage = [[
 		),
         InlineKeyboardButton(
 			"DEV 👷🏻",
-			url='https://t.me/enamyh'
+			url='https://t.me/B0RNTOLE4RN'
 		)
         ]]
 
