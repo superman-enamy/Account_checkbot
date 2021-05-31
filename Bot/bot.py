@@ -3,7 +3,7 @@ from telegram.ext import ( CommandHandler, Filters, MessageHandler, Updater)
 from message import Editmessage, Sendmessage, logger
 from Checks.Altbalaji import altbalaji_helper
 from Checks.hoichoi import hoichoi_helper
-from Checks.voot import voot_helper
+from Checks.voot import Voot_helper
 from Checks.zee5 import zee_helper
 from Miscellaneous.Scraper import pastebin, text_scraper, throwbin
 import os
