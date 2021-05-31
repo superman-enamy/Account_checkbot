@@ -44,7 +44,7 @@ def zee_helper(chat_id, combo):
     response1 = session_requests.get(subs_url, headers=head2)
     result1 = response1.json()
     if result1 == []:
-        expire_text = f'<b>Expired Combo ❌</b>\n<b>Site: Voot</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Expired</b>'
+        expire_text = f'<b>Expired Combo ❌</b>\n<b>Site: Zee5</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Expired</b>'
         Editmessage(chat_id, expire_text, status)
         return
     timedioint = result1[0]["subscription_end"].split('T')[0]
@@ -53,5 +53,5 @@ def zee_helper(chat_id, combo):
     Pack_name = result1[0]['subscription_plan']['description']
     Pack_recur = result1[0]['recurring_enabled']
     Pack_pyed = result1[0]['payment_provider']
-    pro_message = f'<b>🌟 Hit Combo 💫</b>\n<b>Site: Zee5</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {Pack_name}\nDays Left: {trial.days} Days\nPayment: {Pack_pyed}\nRecurring: {Pack_recur}</b>'
+    pro_message = f'<b>🌟 Hit Combo By @B0RNTOLE4RN 💫</b>\n<b>Site: Zee5</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {Pack_name}\nDays Left: {trial.days} Days\nPayment: {Pack_pyed}\nRecurring: {Pack_recur}</b>'
     Editmessage(chat_id, pro_message, status)
