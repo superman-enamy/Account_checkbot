@@ -65,5 +65,5 @@ def Voot_helper(chat_id, combo):
     Pack_name = pay_list['itemDetails']['name']
     Pack_recur = pay_list['itemDetails']['isRenewable']
     days = human - datetime.today()
-    pro_message = f'<b>🌟 Hit Combo 💫</b>\n<b>Site: Voot</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {Pack_name}\nDays Left: {days.days}\nRecurring: {Pack_recur}</b>'
+    pro_message = f'<b>🌟 Hit Combo @B0RNTOLE4RN 💫</b>\n<b>Site: Voot</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {Pack_name}\nDays Left: {days.days}\nRecurring: {Pack_recur}</b>'
     Editmessage(chat_id, pro_message, status)
