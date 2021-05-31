@@ -55,5 +55,5 @@ def altbalaji_helper(chat_id, combo):
     Pack_name = subscription['default']
     Pack_recur = str(result['orders'][0]['product']['recurring'])
     Pack_date = subscription['en']
-    pro_message = f'<b>🌟 Hit Combo 💫</b>\n<b>Site: Altbalaji</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {Pack_name}\nType: {Pack_date}\nDays Left: {days.days}\nRecurring: {Pack_recur.capitalize()}</b>'
+    pro_message = f'<b>🌟 Hit Combo @B0RNTOLE4RN 💫</b>\n<b>Site: Altbalaji</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {Pack_name}\nType: {Pack_date}\nDays Left: {days.days}\nRecurring: {Pack_recur.capitalize()}</b>'
     Editmessage(chat_id, pro_message, status)
