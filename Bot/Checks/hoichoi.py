@@ -49,6 +49,6 @@ def hoichoi_helper(chat_id, combo):
     timedioint = result2["subscriptionInfo"]["subscriptionEndDate"].split('T')[0]
     sub2split = timedioint.split('-')
     trial = date(int(sub2split[0]), int(sub2split[1]), int(sub2split[2])) - date.today()
-    pro_message = f'<b>🌟 Hit Combo 💫</b>\n<b>Site: Hoichoi</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {result2["subscriptionPlanInfo"]["name"]}\nDays Left: {trial.days}\nRecurring: {result2["subscriptionPlanInfo"]["renewable"]}</b>'
+    pro_message = f'<b>🌟 Hit Combo @B0RNTOLE4RN 💫</b>\n<b>Site: Hoichoi</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Premium\nPlan: {result2["subscriptionPlanInfo"]["name"]}\nDays Left: {trial.days}\nRecurring: {result2["subscriptionPlanInfo"]["renewable"]}</b>'
     Editmessage(chat_id, pro_message, status)
     return
