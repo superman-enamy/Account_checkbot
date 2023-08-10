@@ -78,7 +78,8 @@ def main():
     updater = Updater(bot_token)
     dp = updater.dispatcher
 
-    dp.add_handler(MessageHandler(filters.text & ~filters.command, duty))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, duty))
+
     dp.add_handler(CommandHandler("scrape", scraper_command))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help_command))
