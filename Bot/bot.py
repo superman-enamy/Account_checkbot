@@ -1,5 +1,5 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import CommandHandler, MessageHandler, Updater, filters
+from telegram.ext import CommandHandler, MessageHandler, Updater, Filters
 from Miscellaneous.Scraper import pastebin, text_scraper, throwbin
 import os
 
