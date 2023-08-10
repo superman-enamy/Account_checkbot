@@ -26,6 +26,7 @@ startmessage = [
     ]
 ]
 
+# ... (rest of your code remains unchanged)
 
 def start(update, context):
     info = update.effective_user
