@@ -1,7 +1,5 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram import Update
-from telegram.ext import CommandHandler, MessageHandler, Updater, CallbackContext, filters
-
+from telegram.ext import CommandHandler, MessageHandler, Updater, filters
 from Miscellaneous.Scraper import pastebin, text_scraper, throwbin
 import os
 
@@ -76,10 +74,10 @@ def scraper_command(update, context):
 
 
 def main():
-    updater = Updater(bot_token, use_context=True)
+    updater = Updater(bot_token)
     dp = updater.dispatcher
 
-    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, duty))
+    dp.add_handler(MessageHandler(filters.text & ~filters.command, duty))
     dp.add_handler(CommandHandler("scrape", scraper_command))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help_command))
