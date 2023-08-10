@@ -3,6 +3,8 @@ from telegram.ext import CommandHandler, MessageHandler, Updater, Filters
 from Miscellaneous.Scraper import pastebin, text_scraper, throwbin
 import os
 
+from message import Sendmessage, logger
+
 # Import other helper functions
 from Checks.Altbalaji import altbalaji_helper
 from Checks.hoichoi import hoichoi_helper
@@ -39,24 +41,38 @@ def start(update, context):
 
 def help_command(update, context):
     chat_id = update.message.chat_id
-    text = "<b>Available Sites:\n!alt~space~combo* - to check Altbalaji accounts\n!hoi~space~combo* - to check Hoichoi accounts\n!voo~space~combo* - to check Voot accounts\n!zee~space~combo* - to check Zee5 accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo here means Email:password combination,':' is important."
-    Sendmessage(chat_id, text, reply_markup=InlineKeyboardMarkup(startmessage), parse_mode='HTML')
+    text = "<b>Available Sites:\n!alt~space~combo* - to check Altbalaji accounts ... </b>"
+    Sendmessage(chat_id, text, reply_markup=InlineKeyboardMarkup(startmessage))
 
+# Define the combos_spilt function
+def combos_spilt(combos):
+    split = combos.split('\n')
+    return split
 
 def duty(update, context):
     chat_id = update.message.chat_id
     text = update.message.text.split(' ', 1)
-    if text[0] == '!alt':
-        if '\n' in text[1]:
+    if len(text) > 1:  # Check if there's more than one element in the list
+        if text[0] == '!alt':
             simple = combos_spilt(text[1])
             for i in simple:
                 altbalaji_helper(chat_id, i)
             Sendmessage(chat_id, 'Completed')
+        elif text[0] == '!voo':
+            simple = combos_spilt(text[1])
+            for i in simple:
+                Voot_helper(chat_id, i)
+            Sendmessage(chat_id, 'Completed')
+        elif text[0] == '!zee':  # Add this block for !zee command
+            simple = combos_spilt(text[1])
+            for i in simple:
+                zee_helper(chat_id, i)
+            Sendmessage(chat_id, 'Completed')
         else:
-            altbalaji_helper(chat_id, text[1])
-    # ... similar blocks for other commands
+            logger.info('Unknown Command')
     else:
-        logger.info('Unknown Command')
+        logger.info('Invalid command format')  # Handle the case where the command is incomplete
+
 
 
 def scraper_command(update, context):
